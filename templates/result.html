@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Solar Energy Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="background-overlay"></div>
+
+    <h1>Prediction Result</h1>
+    
+    <div class="result-box">
+        <p><strong>Predicted Solar Energy Output:</strong></p>
+        <h2>{{ prediction }} kWh</h2>
+        
+        <hr>
+        
+        <p><strong>Based on the following inputs:</strong></p>
+        <ul class="input-summary">
+            <li>GHI: {{ inputs.GHI }} W/m²</li>
+            <li>Temperature: {{ inputs.temp }} °C</li>
+            <li>Pressure: {{ inputs.pressure }} hPa</li>
+            <li>Humidity: {{ inputs.humidity }} %</li>
+            <li>Wind Speed: {{ inputs.wind_speed }} m/s</li>
+            <li>Rain (last 1h): {{ inputs.rain_1h }} mm</li>
+            <li>Snow (last 1h): {{ inputs.snow_1h }} mm</li>
+            <li>Cloud Coverage: {{ inputs.clouds_all }} %</li>
+            <li>Sunlight Time: {{ inputs.sunlightTime }} h</li>
+            <li>Day Length: {{ inputs.dayLength }} h</li>
+            <li>Hour: {{ inputs.hour }}</li>
+            <li>Month: {{ inputs.month }}</li>
+            <li>Year: {{ inputs.year }}</li>
+        </ul>
+    </div>
+
+    <a href="{{ url_for('home') }}" class="back-button"> Back to Form</a>
+</body>
+</html>

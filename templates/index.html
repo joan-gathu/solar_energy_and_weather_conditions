@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Solar Energy Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Solar Energy Prediction</h1>
+    <form action="/predict" method="POST">
+        <label>Global Horizontal Irradiance (W/m²):</label>
+        <input type="number" name="GHI" step="0.1" required>
+
+        <label>Temperature (°C):</label>
+        <input type="number" name="temp" step="0.1" required>
+
+        <label>Atmospheric Pressure (hPa):</label>
+        <input type="number" name="pressure" required>
+
+        <label>Relative Humidity (%):</label>
+        <input type="number" name="humidity" min="0" max="100" required>
+
+        <label>Wind Speed (m/s):</label>
+        <input type="number" name="wind_speed" step="0.1">
+
+        <label>Rain in the last 1 hour (mm):</label>
+        <input type="number" name="rain_1h" step="0.01">
+
+        <label>Snow in the last 1 hour (mm):</label>
+        <input type="number" name="snow_1h" step="0.01">
+
+        <label>Cloud Coverage (%):</label>
+        <input type="number" name="clouds_all" min="0" max="100">
+
+        <label>Sunlight Time / Day Length (hours):</label>
+        <input type="number" name="sunlightTime" step="0.01">
+
+        <label>Total Day Length (hours):</label>
+        <input type="number" name="dayLength" step="0.01">
+
+        <label>Hour (0-23):</label>
+        <input type="number" name="hour" min="0" max="23" required>
+
+        <label>Month (1-12):</label>
+        <input type="number" name="month" min="1" max="12" required>
+
+        <label>Year:</label>
+        <input type="number" name="year" min="2000" max="2100" required>
+
+        <!-- Submit button moved here -->
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
