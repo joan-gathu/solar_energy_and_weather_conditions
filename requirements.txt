@@ -1,0 +1,14 @@
+flask
+scikit-learn
+pandas
+numpy
+joblib
+matplotlib
+prophet
+xgboost
+lightgbm
+ipykernel
+xgboost 
+lightgbm
+seaborn 
+pmdarima
